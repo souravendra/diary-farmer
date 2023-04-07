@@ -1,18 +1,136 @@
-/** @type {import('tailwindcss').Config} */
 const { join } = require('path');
 const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 module.exports = {
-  content: [
-    './app/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
+  mode: 'jit',
+  purge: [
+    join(__dirname, 'pages/**/*.{js,ts,jsx,tsx}'),
+    join(__dirname, 'components/**/*.{js,ts,jsx,tsx}'),
+    './components/Requirements/*.{html,css,js}',
+    './pages/*.js',
+    './pages/**/*.js',
+    './atoms/*.js',
+    './components/Header/*.js',
+    './atoms/**/*.js',
+    './components/**/*.js',
+    './components/*.js',
     './components/**/*.{js,ts,jsx,tsx}',
-
-    // Or if using `src` directory:
-    './src/**/*.{js,ts,jsx,tsx}',
   ],
-  theme: {
-    extend: {},
+  options: {
+    whitelist: ['.grid', '.grid-cols-3', '.gap-x-5'],
   },
-  plugins: [],
+  darkMode: false,
+  theme: {
+    colors: {
+      ...colors,
+    },
+    extend: {
+      inset: (theme) => ({
+        ...theme,
+        '1/5': '20%',
+        '1/10': '10%',
+        '1/20': '4.3%',
+      }),
+      padding: (theme) => ({
+        ...theme,
+        'screen-90': '80vh',
+        'screen/1.3': '75vh',
+        'screen/2': '50vh',
+        'screen/3': 'calc(100vh / 3)',
+        'screen/4': 'calc(100vh / 4)',
+        'screen/5': 'calc(100vh / 5)',
+        4.5: '18rem',
+        '52px': '3.25rem',
+        18: '4.5rem',
+        53: '13.25rem',
+        22: '1.375rem',
+        '18px': '1.125rem',
+        '34px': '2.125rem',
+        17: '4.25rem',
+      }),
+      margin: (theme) => ({
+        ...theme,
+      }),
+      borderRadius: (theme) => ({
+        ...theme,
+        '10px': '0.625rem',
+        '7px': '0.438rem',
+        '20px': '1.125rem',
+      }),
+      borderColor: (theme) => ({
+        ...theme,
+        'dark-blue': '#252C86',
+        'slate-gray': '#74879A',
+      }),
+      backgroundColor: (theme) => ({
+        ...theme('colors'),
+        ...theme,
+        'dark-blue': '#252C86',
+        'slate-gray': '#74879A',
+        'link-water': '#E0E9F6',
+        'athens-gray': '#E7E9F0',
+        cancel: '#FF0000',
+        paid: '#008000',
+        gold: '#DDAA02',
+      }),
+      textColor: (theme) => ({
+        ...theme('colors'),
+        zinc: '#71717a',
+        'text-black': '#18191F',
+        'bg:light': '#F6F7FB',
+        'title:color': '#2A2A2A',
+        'eva:gray': '#4A5576',
+        gray: '#4A5576',
+        rose: '#F43F5E',
+        purple: '#A855F7',
+        'light-gray': '#4F4F4F',
+        'dim-gray': '#CECECE',
+        'footer-header': '#222222',
+        'footer-links': '#717171',
+        'footer-alt': '#FFFFFF',
+        orangeColor: '#FF794D',
+        notes: '#717171',
+        secondary: '#7A76FF',
+        review: '#282828',
+        'primary-black': '#242424',
+        gold: '#FCD307',
+        'dark-blue': '#252C86',
+        'slate-gray': '#363D63',
+        'link-water': '#E0E9F6',
+        'athens-gray': '#E7E9F0',
+        'active-green': '#7DEC47',
+      }),
+      fontWeight: (theme) => ({
+        normal: '400',
+        aboveNormal: '450',
+      }),
+      fontSize: (theme) => ({
+        'title:size': [33, 36],
+        '18px': '0.938rem',
+        '28px': '1.75rem',
+      }),
+      fontFamily: (theme) => ({
+        'circular-std': 'Circular Std',
+        lato: 'Lato',
+      }),
+      minHeight: (theme) => ({
+        ...theme,
+        95: '95vh',
+      }),
+      minWidth: (theme) => ({
+        ...theme,
+        190: '190px',
+      }),
+      width: (theme) => ({
+        ...theme,
+        300: '300px',
+      }),
+    },
+  },
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+    },
+  },
+  plugins: [require('tailwindcss-rtl')],
 };
