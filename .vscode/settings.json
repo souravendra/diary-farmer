@@ -1,0 +1,71 @@
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.bracketSameLine": false, // /> this will be placed in new line
+  "prettier.semi": true, // adds semi colons at end, default is true
+  "prettier.trailingComma": "all", // adds trailing comma where it is valid according to es5. //es5 is default
+  "prettier.bracketSpacing": true, // default is true, e.g  { object }
+  "prettier.htmlWhitespaceSensitivity": "css", // css is default, it make sure formatter won't remove spaces while formatting html as space are important in html
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "color": "#ffffff",
+      "backgroundColor": "blue"
+    },
+    {
+      "text": "FIXME:"
+    },
+    {
+      "text": "TODO:"
+    },
+    {
+      "text": "WARNING:",
+      "color": "#ffffff",
+      "backgroundColor": "red"
+    },
+    {
+      "text": "WARN:",
+      "color": "#ffffff",
+      "backgroundColor": "red"
+    },
+    {
+      "text": "INFO:",
+      "color": "#ffffff",
+      "backgroundColor": "green"
+    }
+  ],
+
+  "editor.formatOnPaste": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSave": true,
+  //"terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+  "autoimport.filesToScan": "**/*.{ts,tsx,js}",
+  // "editor.fontFamily": "Fira Code Medium, monospace",
+  "editor.fontLigatures": true,
+  //  "terminal.integrated.fontFamily": "monospace",
+  "better-comments.highlightPlainText": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "auto-close-tag.insertSpaceBeforeSelfClosingTag": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "docwriter.style": "Auto-detect",
+  "eslint.workingDirectories": ["./ui", "./backend"]
+}
