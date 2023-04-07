@@ -3,14 +3,13 @@ const plugin = require('tailwindcss/plugin');
 const colors = require('tailwindcss/colors');
 module.exports = {
   mode: 'jit',
-  purge: [
+  content: [
     join(__dirname, 'pages/**/*.{js,ts,jsx,tsx}'),
     join(__dirname, 'components/**/*.{js,ts,jsx,tsx}'),
-    './components/Requirements/*.{html,css,js}',
+    './components/*.{html,css,js}',
     './pages/*.js',
     './pages/**/*.js',
     './atoms/*.js',
-    './components/Header/*.js',
     './atoms/**/*.js',
     './components/**/*.js',
     './components/*.js',
