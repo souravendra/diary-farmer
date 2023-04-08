@@ -2,7 +2,6 @@ import JwtService from '../services/jwt.service';
 
 const authMiddleware = async (req, res, next) => {
   try {
-    console.log(process.env.SERVER_JWT);
     if (process.env.SERVER_JWT === 'false') return next();
 
     const token = JwtService.jwtGetToken(req);
