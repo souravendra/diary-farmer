@@ -2,6 +2,7 @@ import User from '../models/User';
 import JwtService from '../services/jwt.service';
 import * as Yup from 'yup';
 import { Errors } from '../utils/errors';
+import moment from 'moment';
 
 let loginController = {
   login: async (req, res) => {
@@ -43,6 +44,12 @@ let loginController = {
       console.log(error);
       return res.status(500).json({ error: Errors.SERVER_ERROR });
     }
+  },
+
+  test: async (req, res) => {
+    return res.status(200).json({
+      server_time: `sample response to show server is up & running, time: ${moment().format()}`,
+    });
   },
 };
 
