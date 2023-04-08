@@ -1,11 +1,16 @@
-# animall-diary-farmer
+# Dairy 2 Do
 
-Animall Assignment - to do app for a diary farmer
+> **Animall Assignment** - To Do app for a diary farmer (which I have named Dairy 2 Do)
 
-- api endpoint : https://animall-api.onrender.com/test
-- ui endpoint: https://animall-diary-farmer.vercel.app
+#### Endpoints:
 
-Console:
+- API endpoint : [test endpoint, will return current time on prod server](https://animall-api.onrender.com/test)
 
-- api console : https://dashboard.render.com/web/srv-cgohm8gu9tun42p4kpgg/logs
-- ui console: https://vercel.com/souravendraofficial-gmailcom/animall-diary-farmer/logs?page=1&timeline=past30Minutes&startDate=1680941151675&endDate=1680942951675
+- UI endpoint: [Dairy 2 Do](https://animall-diary-farmer.vercel.app)
+
+#### Console (not public, for my reference only):
+
+- API console : [Render Nodejs Server Instance](https://dashboard.render.com/web/srv-cgohm8gu9tun42p4kpgg/logs)
+
+- UI console: [Vercel React/NextJs Instance](https://vercel.com/souravendraofficial-gmailcom/animall-diary-farmer/logs?page=1&timeline=past30Minutes&startDate=1680941151675&endDate=1680942951675)
+- Database (PostGres) console: [Render PostGres Instance](https://dashboard.render.com/d/dpg-cgnr0cgrddl9mmvloieg-a/logs)
