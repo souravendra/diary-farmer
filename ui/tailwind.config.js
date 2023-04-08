@@ -18,7 +18,6 @@ module.exports = {
   options: {
     whitelist: ['.grid', '.grid-cols-3', '.gap-x-5'],
   },
-  darkMode: false,
   theme: {
     colors: {
       ...colors,

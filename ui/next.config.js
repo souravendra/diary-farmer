@@ -9,4 +9,22 @@ module.exports = {
   },
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
+  webpack: (
+    config,
+    {
+      buildId,
+      dev,
+      isServer,
+      defaultLoaders,
+      nextRuntime,
+      webpack,
+      watchOptions,
+    },
+  ) => {
+    watchOptions: {
+      ignored: [/node_modules/, /.next/];
+    }
+    // Important: return the modified config
+    return config;
+  },
 };
