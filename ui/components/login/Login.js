@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { PrimaryButton, TextField, PasswordField } from 'atoms/index.js';
 import { login } from 'services/session.service.js';
@@ -142,7 +143,14 @@ const Login = () => {
           rel='noopener noreferrer'
         >
           Dairy 2 Do |{' '}
-          <img src='/vercel.svg' alt='Vercel Logo' className='h-4 ml-2' />
+          <Image
+            src='/cow.svg'
+            alt='Logo'
+            className='h-7 ml-1'
+            quality={100}
+            height={50}
+            width={50}
+          />
         </a>
       </footer>
     </div>
