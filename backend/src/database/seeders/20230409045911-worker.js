@@ -9,18 +9,9 @@ module.exports = {
     return queryInterface.bulkInsert('Users', [
       {
         id: uuid.v4(),
-        name: 'Jeevan Das',
-        email: 'owner@farm.com',
-        role: 'FARM_OWNER',
-        password_hash: await bcrypt.hash('password', 8),
-        createdAt: moment().format(),
-        updatedAt: moment().format(),
-      },
-      {
-        id: uuid.v4(),
-        name: 'Atul Singh',
-        email: 'worker@farm.com',
-        role: 'FARM_WORKER',
+        name: 'Neeta Singh',
+        email: 'doctor@farm.com',
+        role: 'FARM_DOCTOR',
         password_hash: await bcrypt.hash('password', 8),
         createdAt: moment().format(),
         updatedAt: moment().format(),
