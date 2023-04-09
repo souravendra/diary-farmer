@@ -1,4 +1,6 @@
 import Cookies from 'universal-cookie';
+import * as HttpService from 'services/http.service';
+const ApiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const cookies = new Cookies();
 
@@ -15,6 +17,12 @@ export const setAuth = (authObject) => {
 export const removeAuth = () => {
   cookies.remove('AUTH', { path: '/' }); //removes auth cookie
   return;
+};
+
+export const getUserData = () => {
+  const auth = getAuth();
+  const user_id = auth.id;
+  return HttpService.getWithAuth(`${ApiUrl}/user/${user_id}`);
 };
 
 export const isInRole = (role, user) => {
