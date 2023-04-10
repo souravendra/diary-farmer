@@ -9,6 +9,9 @@ module.exports = {
   },
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   webpack: (
     config,
     {
