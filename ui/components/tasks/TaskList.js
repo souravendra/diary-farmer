@@ -264,6 +264,17 @@ const TaskList = ({
                               />
                             </button>
                           )}
+                          {!isOwner && (
+                            <button
+                              title='View Task'
+                              className='mx-1 focus:outline-none'
+                              onClick={() => {
+                                router.push(`tasks/${trow.id}/view`);
+                              }}
+                            >
+                              <FontAwesomeIcon icon='eye' className='text-lg' />
+                            </button>
+                          )}
                           <button
                             title='Delete'
                             className={`focus:outline-none ${

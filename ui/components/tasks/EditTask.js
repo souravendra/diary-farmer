@@ -50,6 +50,9 @@ const beautify_role = (r) => {
 const EditTask = ({ auth, users, task }) => {
   //console.log(task);
   const router = useRouter();
+  const isViewOnly = router.pathname.includes('view');
+  const pageName = isViewOnly ? 'View Task' : 'Edit Task';
+
   const [taskDetails, setTaskDetails] = useState(initialValues);
   const [currentUser, setCurrentUser] = useState(auth.id);
   const [assignedToUser, setAssignedToUser] = useState(task.userId);
@@ -194,12 +197,12 @@ const EditTask = ({ auth, users, task }) => {
     <>
       <div className='w-full text-slate-gray rounded-md bg-white p-3 h-auto flex flex-col'>
         <Head>
-          <title>Dairy 2 Do | Edit Task</title>
+          <title>Dairy 2 Do | {pageName}</title>
         </Head>
         {loading}
         <div className='title mb-3'>
           <div className='flex justify-between'>
-            <h2 className='text-xl mb-4'>Edit Task</h2>
+            <h2 className='text-xl mb-4'>{pageName}</h2>
           </div>
           <hr className='bg-gray-200'></hr>
         </div>
@@ -215,6 +218,7 @@ const EditTask = ({ auth, users, task }) => {
                 options={userOptions}
                 onChange={handleUserSelect}
                 value={userSelected}
+                isDisabled={isViewOnly}
                 placeholder='Select a user to assign a task'
                 className='w-full text-left text-zinc'
               />
@@ -232,6 +236,7 @@ const EditTask = ({ auth, users, task }) => {
                 options={taskTypeDropDownItems}
                 onChange={handleTaskTypeDropdown}
                 value={taskTypeSelected}
+                isDisabled={isViewOnly}
                 placeholder='Select a task type'
                 className='w-full text-left text-zinc'
               />
@@ -245,6 +250,7 @@ const EditTask = ({ auth, users, task }) => {
                 options={statusDropDownItems}
                 onChange={handleStatusDropdown}
                 value={taskStatus}
+                isDisabled={isViewOnly}
                 placeholder='Select current task status (Assigned)'
                 className='w-full text-left text-zinc'
               />
@@ -261,6 +267,7 @@ const EditTask = ({ auth, users, task }) => {
               value={taskDetails.description}
               name='description'
               onChange={handleInputChange}
+              disabled={isViewOnly}
             />
           </div>
 
@@ -287,29 +294,44 @@ const EditTask = ({ auth, users, task }) => {
           />
         )}
 
-        <div className='btn-pair self-center my-8'>
-          <button
-            type='button'
-            className='border border-dark-blue rounded-lg  w-24 my-4 mx-1 text-center text-dark-blue bg-white sm:m-3 lg:m-4'
-            onClick={() => {
-              setErrorMessage('');
-              router.back();
-            }}
-          >
-            Cancel
-          </button>
-          <button
-            type='button'
-            disabled={status == 'saving'}
-            className='border rounded-lg w-24 my-2 mx-1 text-center text-white bg-dark-blue sm:m-3 lg:m-4'
-            onClick={(e) => {
-              e.preventDefault();
-              SubmitTask();
-            }}
-          >
-            Save
-          </button>
-        </div>
+        {!isViewOnly && (
+          <div className='btn-pair self-center my-8'>
+            <button
+              type='button'
+              className='border border-dark-blue rounded-lg  w-24 my-4 mx-1 text-center text-dark-blue bg-white sm:m-3 lg:m-4'
+              onClick={() => {
+                setErrorMessage('');
+                router.back();
+              }}
+            >
+              Cancel
+            </button>
+            <button
+              type='button'
+              disabled={status == 'saving'}
+              className='border rounded-lg w-24 my-2 mx-1 text-center text-white bg-dark-blue sm:m-3 lg:m-4'
+              onClick={(e) => {
+                e.preventDefault();
+                SubmitTask();
+              }}
+            >
+              Save
+            </button>
+          </div>
+        )}
+        {isViewOnly && (
+          <div className='btn-pair self-center my-8'>
+            <button
+              type='button'
+              className='border border-dark-blue rounded-lg  w-24 my-4 mx-1 text-center text-dark-blue bg-white sm:m-3 lg:m-4'
+              onClick={() => {
+                router.replace('/tasks');
+              }}
+            >
+              Go Back
+            </button>
+          </div>
+        )}
         <span className='self-center text-red-700 font-light'>
           {errorMessage}
         </span>
