@@ -2,11 +2,11 @@ import { where } from 'sequelize';
 import * as Yup from 'yup';
 import Address from '../models/Address';
 import User from '../models/User';
+import Task from '../models/Task';
+import Cattle from '../models/Cattle';
 import { Errors } from '../utils/errors';
 
-//Yup is a JavaScript schema builder for value parsing and validation.
-
-let userController = {
+let CattleController = {
   add: async (req, res) => {
     try {
       const schema = Yup.object().shape({
@@ -167,4 +167,4 @@ let userController = {
   },
 };
 
-export default userController;
+export default CattleController;
