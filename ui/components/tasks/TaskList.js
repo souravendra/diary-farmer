@@ -45,6 +45,7 @@ const TaskTableHeaders = [
   'Type',
   'Status',
   'Created At',
+  'Updated At',
   'Actions',
 ];
 
@@ -243,13 +244,18 @@ const TaskList = ({
                         {moment(trow.createdAt).format('YYYY-MM-DD')}
                       </td>
                       <td className='px-2 py-4 text-sm text-gray-500'>
+                        {moment(trow.updatedAt).format(
+                          'dddd, MMMM Do YYYY, h:mm:ss A',
+                        )}
+                      </td>
+                      <td className='px-2 py-4 text-sm text-gray-500'>
                         <div className='px-2 py-1 w-4/6 align-center justify-between'>
                           {isOwner && (
                             <button
                               title='Edit'
                               className='mx-1 focus:outline-none'
                               onClick={() => {
-                                router.push('tasks/edit');
+                                router.push(`tasks/${trow.id}/edit`);
                               }}
                             >
                               <FontAwesomeIcon
