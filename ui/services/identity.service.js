@@ -25,22 +25,14 @@ export const getUserData = () => {
   return HttpService.getWithAuth(`${ApiUrl}/user/${user_id}`);
 };
 
+export const getAllUsers = () => {
+  return HttpService.getWithAuth(`${ApiUrl}/user`);
+};
+
 export const isInRole = (role, user) => {
   return user.role && user.role == role;
 };
 
 export const isAuthenticated = (user) => {
   return user && user.role; //checks for a valid role string in auth object, im using this to redirect in a useeffect on login component
-};
-
-// export const getMenu = (user) => {}; idk if ill get to use this
-
-const menu = {
-  admin: {
-    main: [
-      { name: 'Dashboard', url: '/dashboard' },
-      { name: 'Manage Tasks', url: '/tasks' },
-      // { name: 'Manage Users', url: '/users' }, no time for this
-    ],
-  },
 };
