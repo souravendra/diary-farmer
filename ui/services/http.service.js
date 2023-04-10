@@ -25,6 +25,7 @@ export const postWithOutAuth = (url, entity) => {
 export const postWithAuth = (url, entity, headers) => {
   //going to use this one the most
   return new Promise((resolve, reject) => {
+    console.log(entity);
     const auth = getAuth();
     if (!headers) {
       headers = {
