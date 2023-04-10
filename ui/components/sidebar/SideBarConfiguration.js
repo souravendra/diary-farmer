@@ -1,9 +1,9 @@
 const SideBarConfig = {
   FARM_OWNER: [
-    {
-      name: 'Dashboard',
-      url: '/dashboard',
-    },
+    // {
+    //   name: 'Dashboard',
+    //   url: '/dashboard',
+    // },
     {
       name: 'Manage Tasks',
       url: '/tasks',
