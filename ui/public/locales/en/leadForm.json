@@ -1,0 +1,23 @@
+{
+  "heading": "Schedule an appointment!",
+  "fullName": "Full Name",
+  "companyName": "Company Name",
+  "emailAddress": "Email Address",
+  "eventType": "Type of Event*",
+  "phone": "Phone",
+  "howCanWeHelp": "How can we help?",
+  "prefferredTime": "When is the best time to reach you?",
+  "preferredMode": "How can we reach you?",
+  "morePreparedBlockHeading": "Want us to be more prepared?",
+  "shareEventDetailsHeading": "Spare a few seconds to share the event’s details",
+  "eventDate": "Event Date",
+  "venueType": "Venue Type",
+  "expectedGuests": "Expected Guests",
+  "otherRequirements": "Other Requirement",
+  "bookNow": "Book now",
+  "typeOfWedding": "Type of Wedding*",
+  "typeOfWeddingPlaceholder": "Select Wedding type",
+  "prefferredTimePlaceholder": "Select your convenient timing",
+  "preferredModePlaceholder": "Please select any one option",
+  "venueTypePlaceholder": "Please select venue type"
+}

@@ -1,0 +1,19 @@
+{
+    "heading": "Schedule an appointment!",
+    "fullName": "Full Name*",
+    "companyName": "Company Name",
+    "emailAddress": "Email Address*",
+    "eventType": "Event Type*",
+    "phone":"phone",
+    "howCanWeHelp": "How can we help?",
+    "prefferredTime": "Preferred Time",
+    "preferredMode": "Preferred Mode",
+    "morePreparedBlockHeading": "Want us to be more prepared?",
+    "shareEventDetailsHeading": "Spare a few seconds to share the event’s details",
+    "eventDate": "Event Date",
+    "venueType":"Venue Type",
+    "expectedGuests": "Expected Guests",
+    "otherRequirement": "OtherRequirement",
+    "bookNow":"Book now",
+    "otherRequirements": "Other requirements"
+}

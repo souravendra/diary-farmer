@@ -1,0 +1,11 @@
+{
+    "heading": "We work with the passion to deliver amazing event experiences",
+    "homeEventImagePath": "/svg/home-events.svg",
+    "homeProductsImagePath": "/svg/home-products.svg",
+    "homeOneStopShopImagePath": "/svg/home-onestopshop.svg",
+    "homeRatingsImagePath": "/svg/home-ratings.svg",
+    "otherEventImagePath": "/svg/events.svg",
+    "otherProductsImagePath": "/svg/products.svg",
+    "otherOneStopShopImagePath": "/svg/onestopshop.svg",
+    "otherRatingsImagePath": "/svg/ratings.svg"
+}
