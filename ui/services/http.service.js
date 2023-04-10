@@ -49,6 +49,7 @@ export const postWithAuth = (url, entity, headers) => {
 export const getWithAuth = (url, params = {}, headers) => {
   return new Promise((resolve, reject) => {
     const auth = getAuth();
+    // console.log({ getWithAuth: auth });
     if (headers) params['headers'] = headers;
     else
       params['headers'] = {
@@ -57,6 +58,7 @@ export const getWithAuth = (url, params = {}, headers) => {
     axios
       .get(url, params)
       .then((response) => {
+        // console.log(response);
         if (response && response.data) {
           resolve(response.data);
         }
