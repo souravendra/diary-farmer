@@ -108,7 +108,7 @@ const TaskList = ({
   );
 
   const DeleteTask = async (task_id) => {
-    // const result = await deleteTask(task_id);
+    const result = await deleteTask(task_id);
     //trigger reload after deleting
     const currentPath = router.pathname;
     const currentQuery = { ...router.query };
@@ -293,6 +293,19 @@ const TaskList = ({
         </Head>
         <div className='title mb-3 flex flex-col sm:flex-row justify-between items-center p-2'>
           <h2 className='text-xl mb-3 sm:mb-0'>Search & Manage Tasks</h2>
+          {isOwner && (
+            <div
+              className='mt-2 sm:mt-0 flex text-center items-center cursor-pointer lg:mr-10 '
+              onClick={() => {
+                router.push('/tasks/add');
+              }}
+            >
+              <p className='mr-3'>Create New Task</p>
+              <button className='border-2 border-slate-gray rounded-lg  px-3 h-9  text-center text-slate-gray bg-white text-xl font-semibold'>
+                +
+              </button>
+            </div>
+          )}
         </div>
 
         <div className='search-filter-container flex flex-col text-center lg:items-stretch'>
@@ -370,7 +383,8 @@ const TaskList = ({
         <hr className='bg-gray-200 mb-7'></hr>
         <div className=' bg-white w-full text-slate-gray flex justify-between'>
           <h2 className='p-2 text-lg text-center flex w-full  justify-center rounded-t-lg text-dark-blue bg-athens-gray'>
-            Tasks found for applied search filters: {`${totalCount}`}
+            Viewing Page: {` ${currentPage}`} of {` ${pageCount}`}, Total Tasks
+            found for applied search filters: {` ${totalCount}`}
           </h2>
         </div>
         <div className={`bg-athens-gray p-4 rounded-lg`}>{content}</div>
