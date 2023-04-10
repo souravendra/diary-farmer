@@ -3,6 +3,8 @@
 import { getAuth, isAuthenticated } from '@/services/identity.service';
 
 const isBrowser = () => typeof window !== 'undefined';
+//^ the above line works perfectly fine on older versions of React & Next, but this causes a hydration error in the latest version
+// that is because of a ui div mismatch post render
 
 const WithAuth = ({ router, children }) => {
   const auth = getAuth();
