@@ -22,8 +22,7 @@ const Login = () => {
   // console.log('S3 BUCKET NAME');
 
   const loginUser = async () => {
-    if (!email || !password) set;
-    setLoading(true);
+    //if (!email || !password) setLoading(true);
     const response = await login(email, password);
     console.log('logging response');
     console.log(response);
