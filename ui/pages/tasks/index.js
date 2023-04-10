@@ -116,7 +116,7 @@ export const getServerSideProps = async (context) => {
   if (cookies.cookies.AUTH) {
     const auth = JSON.parse(cookies.cookies.AUTH);
     setAuth(auth);
-    console.log(context.query);
+    // console.log(context.query);
     context.query.page = context.query.page ? context.query.page : 1; //setting page number
     context.query.status =
       context.query.status && context.query.status.length > 0
@@ -132,15 +132,15 @@ export const getServerSideProps = async (context) => {
         : ''; //setting userId
     const tasks_response = await getTasksPaginated(context.query); //task + pagination info
     const AllTasks = tasks_response.rows;
-    console.log({ tasks_on_ui_index: AllTasks });
+    // console.log({ tasks_on_ui_index: AllTasks });
     const totalCount = parseInt(tasks_response.meta.totalCount);
-    console.log(totalCount);
+    // console.log(totalCount);
     const pageCount = parseInt(tasks_response.meta.pageCount);
     const currentPage = parseInt(tasks_response.meta.currentPage);
     const perPage = parseInt(tasks_response.meta.perPage);
     const users_response = await getAllUsers();
     const users = users_response;
-    console.log(users);
+    // console.log(users);
     return {
       props: {
         AllTasks,
