@@ -1,6 +1,6 @@
 # Dairy 2 Do
 
-> **Animall Assignment** - To Do app for a diary farmer (which I have named Dairy 2 Do)
+> To Do app for a diary farmer (which I have named Dairy 2 Do)
 
 #### Endpoints:
 
